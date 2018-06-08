@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Ardunity
 {
     public class WaterSensorReactor : ArdunityReactor
-    {     
+    {
 
         [Range(0f, 8f)]
         public float maxIntensity = 1f;
@@ -28,20 +28,6 @@ namespace Ardunity
         // Update is called once per frame
         void Update()
         {
-            /*
-            if (_analogInput != null)
-            {
-                if (_analogInput.input < 0.1)
-                {   
-                    
-                }
-                else if (_analogInput.input > 0.5)
-                {
-                    
-                }
-
-            }
-            */
         }
 
         private void OnAnalogInputChanged(float value)
@@ -52,26 +38,6 @@ namespace Ardunity
             Debug.Log("Value : " + _analogInput.input.ToString());
 
             this.transform.position = new Vector3(0, _analogInput.input * 10, 0);
-            //if(_analogInput.input < 0.2)
-            //{
-            //    this.transform.position = new Vector3(0, 0, 0);
-            //}
-            //else if (_analogInput.input < 0.3)
-            //{
-            //    this.transform.position = new Vector3(0, 1, 0);
-            //}
-            //else if (_analogInput.input < 0.4)
-            //{
-            //    this.transform.position = new Vector3(0, 2, 0);
-            //}
-            //else if (_analogInput.input < 0.5)
-            //{
-            //    this.transform.position = new Vector3(0, 3, 0);
-            //}
-            //else
-            //{
-            //    this.transform.position = new Vector3(0, 4, 0);
-            //}
         }
 
         protected override void AddNode(List<Node> nodes)
